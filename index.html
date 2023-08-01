@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/af2e7c57fe.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="images/logo.png" class="logo" />
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Experience</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+          </ul>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+        <div class="header-text">
+          <p>Aspiring Software Engineer</p>
+          <h1>Hi, I'm <span>Fayaz</span><br />from SRM University</h1>
+        </div>
+      </div>
+    </div>
+
+    <!-- --------- About --------- -->
+
+    <div id="about">
+      <div class="conatiner">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="images/user.png" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              Motivated Computer Science student eager to leverage technical skills and passion for innovation in a challenging tech industry role that drives growth and contributes to a forward-thinking organization's success.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Programming Languages</span><br />C, C++, Java, Python</li>
+                <li><span>Web Development</span><br />HTML, CSS, Javascript</li>
+                <li>
+                  <span>UI/UX Design</span><br />Designing using Figma</li>
+                <li><span>Problem Solving</span><br />Data Structures & Algorithms</li>
+              </ul>
+            </div>
+
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>SRM University, AP - Computer Science</span><br />CGPA: 9.03 | 2021 - 2025</li>
+                <li>
+                  <span>Sri Chaitanya Junior College - Intermediate</span><br />Percentage: 98.50 | 2019 - 2021
+                </li>
+                <li><span>St. Joseph's High School</span><br />GPA: 10.0 | 2009 - 2019</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ---------------- Experience ------------- -->
+
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Experience</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-brands fa-figma"></i>
+            <h2>UI/UX Designer Intern</h2>
+            <p>
+              Designed captivating service booking app interface, collaborating cross-functionally to gather requirements, and iteratively created intuitive wireframes and prototypes.
+            </p>
+            <a href="https://www.agumentik.com/">Agumentik Group of Companies</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-book"></i>
+            <h2>Research Intern</h2>
+            <p>
+              Authored book chapter on "Digital Twin and Security," exploring Technology and Cybersecurity.
+              Researching "Heart Stroke Detection using Machine Learning" to drive medical advancements and improve diagnostic accuracy.
+            </p>
+            <a href="https://srmap.edu.in/">SRM University - AP</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-vr-cardboard"></i>
+            <h2>AR & VR Community</h2>
+            <p>
+              Participated in Meta Spark AR hackathon, gained hands-on AR experience, and successfully submitted effects by collaborating with tech enthusiasts.
+            </p>
+            <a href="https://sparkar.facebook.com/ar-studio/">Meta Spark</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ----------------- Portfolio ----------------- -->
+
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="images/work-1.png" />
+            <div class="layer">
+              <h3>Online Job Portal</h3>
+              <p>
+                Developed a functional online job portal with Java, Servlet, JSP, and MySQL. Streamlined employer hiring and enhanced job seekers' experience.
+              </p>
+              <a href="https://github.com/FayazMohammad1/Online-Job-Portal"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-2.png" />
+            <div class="layer">
+              <h3>Virtual Assistant</h3>
+              <p>
+                Developed an advanced voice-based AI assistant with Python akin to Google Assistant and Siri, integrated with web to deliver real-time responses with efficiency and accuracy.
+              </p>
+              <a href="https://github.com/FayazMohammad1/Virtual-Assistant"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+          <div class="work">
+            <img src="images/work-3.jpg" />
+            <div class="layer">
+              <h3>Classroom and Lab Management System</h3>
+              <p>
+                C++ based academic planning system for streamlined class and lab, providing details, displaying vacancies, easy access, modification, and updating of classroom and lab bookings.
+              </p>
+              <a href="https://github.com/FayazMohammad1/ClassRooms-and-Lab-Management-System"
+                ><i class="fa-solid fa-arrow-up-right-from-square"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <a href="https://github.com/FayazMohammad1" class="btn">See more</a>
+      </div>
+    </div>
+
+    <!-- ---------------- Contact --------------- -->
+
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-paper-plane"></i> talkwithfayaz@gmail.com</p>
+            <p><i class="fa-solid fa-phone"></i> +91-7286966090</p>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/in/mohammad-fayaz-shaik-826903238/"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://github.com/FayazMohammad1"><i class="fa-brands fa-github"></i></a>
+              <a href="https://instagram.com/fayaz_mohammad_1?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+            <a href="images/Mohammad_Fayaz_Resume.pdf" download class="btn btn2">Download Resume</a>
+          </div>
+          <div class="contact-right">
+            <form name="submit-to-google-sheet">
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input
+                type="email"
+                name="Email"
+                placeholder="Your Email"
+                required
+              />
+              <textarea
+                name="Message"
+                rows="6"
+                placeholder="Your Message"
+              ></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+
+            <span id="msg"></span>
+
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>
+          Copyright © Fayaz. 2023 All Rights Reserved.
+        </p>
+      </div>
+    </div>
+
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyjbwC-8Q6Q5y8q2jt2meCh9wjwfz__4bep0_d95h4yOPmlPLQYlWq2HkjPlNU3xoA-/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg")
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully!"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+          })
+          .catch((error) => console.error("Error!", error.message));
+      });
+    </script>
+  </body>
+</html>
