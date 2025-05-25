@@ -66,6 +66,12 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color: #0D63A5;
 }
+.sub-caption {
+    font-size: 22px;
+    color: #888;
+    margin-top: -5px;
+}
+  
 
 /* ------------ About ------------ */
 
@@ -79,6 +85,7 @@ nav ul li a:hover::after{
     flex-wrap: wrap;
 }
 .about-col-1{
+    margin-top: 20px;
     flex-basis: 35%;
 }
 .about-col-1 img{
@@ -143,6 +150,7 @@ nav ul li a:hover::after{
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-gap: 40px;
     margin-top: 50px;
+    color: #ababab;
 }
 .services-list div{
     background: #262626;
@@ -157,9 +165,18 @@ nav ul li a:hover::after{
     margin-bottom: 30px;
 }
 .services-list div h2{
+    color: #0D63A5;
     font-size: 30px;
     font-weight: 500;
     margin-bottom: 15px;
+}
+.services-list div:hover h2{
+    color: #fff;
+}
+.services-list div h3{
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 .services-list div a{
     text-decoration: none;
@@ -189,9 +206,12 @@ nav ul li a:hover::after{
     border-radius: 10px;
     position: relative;
     overflow: hidden;
+    min-height: 400px;
 }
 .work img{
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     display: block;
     transition: transform 0.5s;
@@ -213,6 +233,7 @@ nav ul li a:hover::after{
     text-align: center;
     font-size: 14px;
     transition: height 0.5s;
+    /* min-height: 100%; */
 }
 .layer h3{
     font-weight: 500;
@@ -267,6 +288,15 @@ nav ul li a:hover::after{
     margin-right: 15px;
     font-size: 25px;
 }
+.contact-left a {
+    color: inherit;
+    text-decoration: none;
+    transition: transform 0.5s;
+}  
+.contact-left a:hover {
+    text-decoration: none;
+    transform: translateY(-5px);
+}  
 .social-icons{
     margin-top: 30px;
 }
@@ -329,11 +359,14 @@ nav .fa-solid{
         background-image: url(images/phone-background.jpg);
     }
     .header-text{
-        margin-top: 100%;
+        margin-top: 100%; 
         font-size: 16px;
     }
     .header-text h1{
         font-size: 30px;
+    }
+    .sub-caption{
+        font-size: 14px;
     }
     nav .fa-solid{
         display: block;

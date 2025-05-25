@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <title>Portfolio</title>
+    <title>Fayaz - Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/af2e7c57fe.js"
@@ -32,8 +33,9 @@
           <i class="fa-solid fa-bars" onclick="openmenu()"></i>
         </nav>
         <div class="header-text">
-          <p>Aspiring Software Engineer</p>
-          <h1>Hi, I'm <span>Fayaz</span><br />from SRM University</h1>
+          <p>Software Engineer @ Pine Labs</p>
+          <h1>Hi, I'm <span>Fayaz</span></h1>
+          <p class="sub-caption">I bring ideas to life with code</p>
         </div>
       </div>
     </div>
@@ -44,12 +46,12 @@
       <div class="conatiner">
         <div class="row">
           <div class="about-col-1">
-            <img src="images/user.png" />
+            <img src="images/user.jpeg" />
           </div>
           <div class="about-col-2">
             <h1 class="sub-title">About Me</h1>
             <p>
-              Motivated Computer Science student eager to leverage technical skills and passion for innovation in a challenging tech industry role that drives growth and contributes to a forward-thinking organization's success.
+              Software Engineer with 2+ years of experience building scalable web applications and automation tools. Passionate about clean code, fast systems, and solving real-world problems with tech.
             </p>
 
             <div class="tab-titles">
@@ -62,16 +64,18 @@
             <div class="tab-contents active-tab" id="skills">
               <ul>
                 <li><span>Programming Languages</span><br />C, C++, Java, Python</li>
-                <li><span>Web Development</span><br />HTML, CSS, Javascript</li>
+                <li><span>Web Development</span><br />HTML, CSS, Javascript, ReactJS, Node js, Express js, Spring Boot, FastAPI</li>
                 <li>
-                  <span>UI/UX Design</span><br />Designing using Figma</li>
-                <li><span>Problem Solving</span><br />Data Structures & Algorithms</li>
+                  <span>Databases</span><br />MySQL, PostgreSQL, MongoDB</li>
+                <li><span>AI/LLM Tools</span><br />LangGraph, CrewAI, Agentic Framework</li>
+                <li><span>Development Tools</span><br />VS Code, IntelliJ IDEA, Postman, Git, GitHub, Figma, Bitbucket</li>
+                <li><span>Soft Skills</span><br />Communication, Leadership, Teamwork, Problem-Solving</li>
               </ul>
             </div>
 
             <div class="tab-contents" id="education">
               <ul>
-                <li><span>SRM University, AP - Computer Science</span><br />CGPA: 9.03 | 2021 - 2025</li>
+                <li><span>SRM University, AP - Computer Science</span><br />CGPA: 9.2 | 2021 - 2025</li>
                 <li>
                   <span>Sri Chaitanya Junior College - Intermediate</span><br />Percentage: 98.50 | 2019 - 2021
                 </li>
@@ -90,30 +94,33 @@
         <h1 class="sub-title">My Experience</h1>
         <div class="services-list">
           <div>
+            <i class="fa-solid fa-robot"></i>
+            <h2>Software Engineer Intern</h2>
+            <h3>Pine Labs | Sep 2024 – Present</h3>
+            <p>
+              Led development of a multilingual AI assistant in 7+ regional languages using LangGraph and Agentic Framework, boosting in-store customer engagement and reducing merchant intervention. Developed an end-to-end KYC system with Spring Boot, cutting operations workload by 93%. Improved IMEI/SKU scanner speed by 40% and built a FastAPI-based Task Management App reducing coordination by 90%.
+            </p>
+          </div>
+
+          <div>
+            <i class="fa-solid fa-chart-line"></i>
+            <h2>Associate Programmer Analyst Intern</h2>
+            <h3>Moody’s Analytics | Jun 2024 – Aug 2024</h3>
+            <p>
+              Gained experience in agile development while improving codebase quality using C#, NUnit, and Moq, boosting unit test coverage from 24% to 98% through focused testing and collaboration.
+            </p>
+          </div>
+          
+          <div>
             <i class="fa-brands fa-figma"></i>
             <h2>UI/UX Designer Intern</h2>
+            <h3>Agumentik Group of Companies | Jun 2023 – Aug 2023</h3>
             <p>
-              Designed captivating service booking app interface, collaborating cross-functionally to gather requirements, and iteratively created intuitive wireframes and prototypes.
+              Conducted usability testing with 200+ users and collaborated with cross-functional teams to design a service booking
+              app UI, reducing support inquiries by 50% through optimized wireframes and prototypes.
             </p>
-            <a href="https://www.agumentik.com/">Agumentik Group of Companies</a>
           </div>
-          <div>
-            <i class="fa-solid fa-book"></i>
-            <h2>Research Intern</h2>
-            <p>
-              Authored book chapter on "Digital Twin and Security," exploring Technology and Cybersecurity.
-              Researching "Heart Stroke Detection using Machine Learning" to drive medical advancements and improve diagnostic accuracy.
-            </p>
-            <a href="https://srmap.edu.in/">SRM University - AP</a>
-          </div>
-          <div>
-            <i class="fa-solid fa-vr-cardboard"></i>
-            <h2>AR & VR Community</h2>
-            <p>
-              Participated in Meta Spark AR hackathon, gained hands-on AR experience, and successfully submitted effects by collaborating with tech enthusiasts.
-            </p>
-            <a href="https://sparkar.facebook.com/ar-studio/">Meta Spark</a>
-          </div>
+
         </div>
       </div>
     </div>
@@ -124,46 +131,54 @@
       <div class="container">
         <h1 class="sub-title">My Work</h1>
         <div class="work-list">
+          
+          <!-- WikiWise -->
           <div class="work">
             <img src="images/work-1.png" />
             <div class="layer">
-              <h3>Online Job Portal</h3>
+              <h3>WikiWise</h3>
               <p>
-                Developed a functional online job portal with Java, Servlet, JSP, and MySQL. Streamlined employer hiring and enhanced job seekers' experience.
+                GenAI-powered platform built using MERN stack to answer user queries with articles and concise explanations—enhancing information access and knowledge sharing.
               </p>
-              <a href="https://github.com/FayazMohammad1/Online-Job-Portal"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+              <a href="https://github.com/FayazMohammad1/Wiki-Project">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
           </div>
+    
+          <!-- Virtual Assistant -->
           <div class="work">
             <img src="images/work-2.png" />
             <div class="layer">
               <h3>Virtual Assistant</h3>
               <p>
-                Developed an advanced voice-based AI assistant with Python akin to Google Assistant and Siri, integrated with web to deliver real-time responses with efficiency and accuracy.
+                Developed an advanced voice-based AI assistant in Python, similar to Siri or Google Assistant, providing real-time web-integrated responses with high accuracy.
               </p>
-              <a href="https://github.com/FayazMohammad1/Virtual-Assistant"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+              <a href="https://github.com/FayazMohammad1/Virtual-Assistant">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
           </div>
+    
+          <!-- Blockchain Crowdfunding -->
           <div class="work">
-            <img src="images/work-3.jpg" />
+            <img src="images/work-3.png" />
             <div class="layer">
-              <h3>Classroom and Lab Management System</h3>
+              <h3>Blockchain Based Crowdfunding Platform</h3>
               <p>
-                C++ based academic planning system for streamlined class and lab, providing details, displaying vacancies, easy access, modification, and updating of classroom and lab bookings.
+                Developed a Web3-based crowdfunding platform using Solidity and React with real-time tracking and smart contract transparency to ensure trust and accountability.
               </p>
-              <a href="https://github.com/FayazMohammad1/ClassRooms-and-Lab-Management-System"
-                ><i class="fa-solid fa-arrow-up-right-from-square"></i
-              ></a>
+              <a href="https://github.com/FayazMohammad1/Blockchain-based-Crowdfunding-Platform">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
           </div>
+    
         </div>
         <a href="https://github.com/FayazMohammad1" class="btn">See more</a>
       </div>
     </div>
+    
 
     <!-- ---------------- Contact --------------- -->
 
@@ -172,8 +187,16 @@
         <div class="row">
           <div class="contact-left">
             <h1 class="sub-title">Contact Me</h1>
-            <p><i class="fa-solid fa-paper-plane"></i> talkwithfayaz@gmail.com</p>
-            <p><i class="fa-solid fa-phone"></i> +91-7286966090</p>
+            <p>
+              <a href="https://mail.google.com/mail/?view=cm&to=talkwithfayaz@gmail.com" target="_blank">
+                <i class="fa-solid fa-paper-plane"></i> talkwithfayaz@gmail.com
+              </a>
+            </p>
+            <p>
+              <a href="tel:+917286966090">
+                <i class="fa-solid fa-phone"></i> +91-7286966090
+              </a>
+            </p>
             <div class="social-icons">
               <a href="https://www.linkedin.com/in/mohammad-fayaz-shaik-826903238/"><i class="fa-brands fa-linkedin"></i></a>
               <a href="https://github.com/FayazMohammad1"><i class="fa-brands fa-github"></i></a>
@@ -205,7 +228,7 @@
       </div>
       <div class="copyright">
         <p>
-          Copyright © Fayaz. 2023 All Rights Reserved.
+          Copyright © Fayaz. 2025 All Rights Reserved.
         </p>
       </div>
     </div>
@@ -235,24 +258,39 @@
       }
     </script>
 
-    <script>
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbyjbwC-8Q6Q5y8q2jt2meCh9wjwfz__4bep0_d95h4yOPmlPLQYlWq2HkjPlNU3xoA-/exec";
-      const form = document.forms["submit-to-google-sheet"];
-      const msg = document.getElementById("msg")
+<script>
+  const scriptURL =
+    "https://script.google.com/macros/s/AKfycbxWS0Fsub-EaKDSqEyg-l6JzT5kZWeJovDmRY6o7fL7cviI22Jq0lSt3WgJ3I-c518mHw/exec";
+  const form = document.forms["submit-to-google-sheet"];
+  const msg = document.getElementById("msg");
+  const submitBtn = form.querySelector("button[type='submit']");
 
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        fetch(scriptURL, { method: "POST", body: new FormData(form) })
-          .then((response) => {
-            msg.innerHTML = "Message sent successfully!"
-            setTimeout(function(){
-              msg.innerHTML = ""
-            }, 5000)
-            form.reset()
-          })
-          .catch((error) => console.error("Error!", error.message));
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Disable button and change text
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Submitting...";
+
+    fetch(scriptURL, { method: "POST", body: new FormData(form) })
+      .then((response) => {
+        msg.innerHTML = "Message sent successfully!";
+        setTimeout(() => {
+          msg.innerHTML = "";
+        }, 5000);
+        form.reset();
+
+        // Re-enable button and restore text
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit";
+      })
+      .catch((error) => {
+        console.error("Error!", error.message);
+        msg.innerHTML = "Something went wrong. Please try again!";
+        submitBtn.disabled = false;
+        submitBtn.innerText = "Submit";
       });
-    </script>
+  });
+</script>
   </body>
 </html>
