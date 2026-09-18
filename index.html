@@ -1,41 +1,80 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
       rel="stylesheet"
     />
-    <title>Fayaz - Portfolio</title>
+    <title>Fayaz — Portfolio</title>
     <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/af2e7c57fe.js"
       crossorigin="anonymous"
     ></script>
+    <script>
+      // Apply saved theme before paint to avoid a flash of the wrong theme.
+      (function () {
+        var saved = localStorage.getItem("theme");
+        if (saved === "light")
+          document.documentElement.setAttribute("data-theme", "light");
+      })();
+    </script>
   </head>
   <body>
+    <!-- ambient blobs behind everything -->
+    <div class="bg-blobs" aria-hidden="true">
+      <span class="blob blob-a"></span>
+      <span class="blob blob-b"></span>
+    </div>
+    <!-- cursor-following spotlight -->
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <header class="site-nav">
+      <div class="nav-inner glass">
+        <a href="#header" class="logo-mark">
+          <span class="logo-badge">FS</span>
+          <span class="logo-text">fayaz</span>
+        </a>
+        <ul id="sidemenu">
+          <li><a href="#header" onclick="closemenu()">Home</a></li>
+          <li><a href="#about" onclick="closemenu()">About</a></li>
+          <li><a href="#services" onclick="closemenu()">Experience</a></li>
+          <li><a href="#projects" onclick="closemenu()">Projects</a></li>
+          <li><a href="#contact" onclick="closemenu()">Contact</a></li>
+          <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+        </ul>
+        <div class="nav-actions">
+          <button id="theme-toggle" aria-label="Toggle light and dark mode">
+            <i class="fa-solid fa-sun"></i>
+            <i class="fa-solid fa-moon"></i>
+          </button>
+          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </div>
+      </div>
+    </header>
+
     <div id="header">
       <div class="container">
-        <nav>
-          <img src="images/logo.png" class="logo" />
-          <ul id="sidemenu">
-            <li><a href="#header">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Experience</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-          </ul>
-          <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-        </nav>
         <div class="header-text">
-          <p>Software Engineer @ Pine Labs</p>
-          <h1>Hi, I'm <span>Fayaz</span></h1>
-          <p class="sub-caption">I bring ideas to life with code</p>
+          <p class="eyebrow">Application Engineer · IDFC FIRST Bank</p>
+          <h1>Hi, I'm Fayaz.<br />I build things that work.</h1>
+          <p class="sub-caption">
+            2+ years shipping full-stack applications, backend systems, and
+            agentic AI workflows — from first commit to production.
+          </p>
+          <div class="header-cta">
+            <a href="#contact" class="btn btn-primary">Get in touch</a>
+            <a href="#projects" class="btn btn-ghost">See my work</a>
+          </div>
+          <div class="exp-badge glass">
+            <span class="stat-num">2+</span>
+            <span class="stat-label">years of experience</span>
+          </div>
         </div>
       </div>
     </div>
@@ -43,15 +82,19 @@
     <!-- --------- About --------- -->
 
     <div id="about">
-      <div class="conatiner">
+      <div class="container">
+        <p class="section-marker">01 — About</p>
         <div class="row">
-          <div class="about-col-1">
-            <img src="images/user.jpeg" />
+          <div class="about-col-1 tilt-card">
+            <img src="assets/user.jpeg" />
           </div>
           <div class="about-col-2">
-            <h1 class="sub-title">About Me</h1>
-            <p>
-              Software Engineer with 2+ years of experience building scalable web applications and automation tools. Passionate about clean code, fast systems, and solving real-world problems with tech.
+            <h2 class="sub-title">About me</h2>
+            <p class="about-text">
+              Software Engineer with 2+ years of experience in full-stack
+              development, AI integrations, and backend systems. Skilled in
+              React, Node, Spring Boot, and FastAPI, with strong CS fundamentals
+              and a focus on clean, fast, reliable systems.
             </p>
 
             <div class="tab-titles">
@@ -61,25 +104,62 @@
               <p class="tab-links" onclick="opentab('education')">Education</p>
             </div>
 
-            <div class="tab-contents active-tab" id="skills">
+            <div class="tab-contents active-tab glass" id="skills">
               <ul>
-                <li><span>Programming Languages</span><br />C, C++, Java, Python</li>
-                <li><span>Web Development</span><br />HTML, CSS, Javascript, ReactJS, Node js, Express js, Spring Boot, FastAPI</li>
                 <li>
-                  <span>Databases</span><br />MySQL, PostgreSQL, MongoDB</li>
-                <li><span>AI/LLM Tools</span><br />LangGraph, CrewAI, Agentic Framework</li>
-                <li><span>Development Tools</span><br />VS Code, IntelliJ IDEA, Postman, Git, GitHub, Figma, Bitbucket</li>
-                <li><span>Soft Skills</span><br />Communication, Leadership, Teamwork, Problem-Solving</li>
+                  <span>Coursework</span>
+                  <p>
+                    Data Structures and Algorithms, Object-Oriented Programming,
+                    Operating Systems
+                  </p>
+                </li>
+                <li>
+                  <span>Web Development</span>
+                  <p>
+                    HTML, CSS, JavaScript, React, Node.js, Express, Spring Boot,
+                    FastAPI
+                  </p>
+                </li>
+                <li>
+                  <span>Databases</span>
+                  <p>MySQL, PostgreSQL, MongoDB</p>
+                </li>
+                <li>
+                  <span>Languages</span>
+                  <p>C++, Python, Java</p>
+                </li>
+                <li>
+                  <span>Tools</span>
+                  <p>
+                    VS Code, IntelliJ IDEA, Postman, Git, GitHub, Figma,
+                    Bitbucket, AWS
+                  </p>
+                </li>
+                <li>
+                  <span>AI &amp; Agentic Frameworks</span>
+                  <p>LangGraph, CrewAI</p>
+                </li>
+                <li>
+                  <span>Soft Skills</span>
+                  <p>Communication, Leadership, Teamwork, Problem-Solving</p>
+                </li>
               </ul>
             </div>
 
-            <div class="tab-contents" id="education">
+            <div class="tab-contents glass" id="education">
               <ul>
-                <li><span>SRM University, AP - Computer Science</span><br />CGPA: 9.2 | 2021 - 2025</li>
                 <li>
-                  <span>Sri Chaitanya Junior College - Intermediate</span><br />Percentage: 98.50 | 2019 - 2021
+                  <span>SRM University, AP — Computer Science</span>
+                  <p>CGPA: 9.26 &nbsp;·&nbsp; 2021 – 2025</p>
                 </li>
-                <li><span>St. Joseph's High School</span><br />GPA: 10.0 | 2009 - 2019</li>
+                <li>
+                  <span>Sri Chaitanya Junior College — Intermediate</span>
+                  <p>Percentage: 98.50 &nbsp;·&nbsp; 2019 – 2021</p>
+                </li>
+                <li>
+                  <span>St. Joseph's High School</span>
+                  <p>GPA: 10.0 &nbsp;·&nbsp; 2009 – 2019</p>
+                </li>
               </ul>
             </div>
           </div>
@@ -91,145 +171,272 @@
 
     <div id="services">
       <div class="container">
-        <h1 class="sub-title">My Experience</h1>
+        <p class="section-marker">02 — Experience</p>
+        <h2 class="sub-title">Where I've worked</h2>
         <div class="services-list">
-          <div>
-            <i class="fa-solid fa-robot"></i>
-            <h2>Software Engineer Intern</h2>
-            <h3>Pine Labs | Sep 2024 – Present</h3>
-            <p>
-              Led development of a multilingual AI assistant in 7+ regional languages using LangGraph and Agentic Framework, boosting in-store customer engagement and reducing merchant intervention. Developed an end-to-end KYC system with Spring Boot, cutting operations workload by 93%. Improved IMEI/SKU scanner speed by 40% and built a FastAPI-based Task Management App reducing coordination by 90%.
-            </p>
+          <div class="service-item glass spotlight">
+            <div class="service-head">
+              <div class="company-title">
+                <span class="company-badge"
+                  ><img src="assets/idfc-logo.png" alt="IDFC FIRST Bank logo"
+                /></span>
+                <h3>Application Engineer</h3>
+              </div>
+              <span class="service-meta"
+                >IDFC FIRST Bank · Sep 2025 – Present</span
+              >
+            </div>
+            <ul class="service-points">
+              <li>
+                Contributing to AAMOS, a banking AML alert and investigation
+                platform, integrating case tracking, role-based workflows, and
+                multi-level escalations to improve case traceability and team
+                coordination.
+              </li>
+              <li>
+                Working on replacing the legacy AML platform with an in-house
+                solution using Spring Boot, MongoDB, Elasticsearch, Temporal,
+                and FlutterFlow — an estimated 55–60% reduction in annual
+                licensing costs across branches in India.
+              </li>
+              <li>
+                Developing an agentic AI-powered Jira automation workflow with
+                LangGraph: moving a ticket to an "AI Development" lane triggers
+                automated analysis of ticket context, logs, and source code,
+                followed by automated fix proposals and pull request creation in
+                Bitbucket.
+              </li>
+            </ul>
           </div>
 
-          <div>
-            <i class="fa-solid fa-chart-line"></i>
-            <h2>Associate Programmer Analyst Intern</h2>
-            <h3>Moody’s Analytics | Jun 2024 – Aug 2024</h3>
-            <p>
-              Gained experience in agile development while improving codebase quality using C#, NUnit, and Moq, boosting unit test coverage from 24% to 98% through focused testing and collaboration.
-            </p>
-          </div>
-          
-          <div>
-            <i class="fa-brands fa-figma"></i>
-            <h2>UI/UX Designer Intern</h2>
-            <h3>Agumentik Group of Companies | Jun 2023 – Aug 2023</h3>
-            <p>
-              Conducted usability testing with 200+ users and collaborated with cross-functional teams to design a service booking
-              app UI, reducing support inquiries by 50% through optimized wireframes and prototypes.
-            </p>
+          <div class="service-item glass spotlight">
+            <div class="service-head">
+              <div class="company-title">
+                <span class="company-badge">
+                  <img src="assets/pinelabs-logo.png" alt="Pine Labs logo" />
+                </span>
+                <h3>Software Engineer Intern</h3>
+              </div>
+              <span class="service-meta">Pine Labs · Sep 2024 – Sep 2025</span>
+            </div>
+            <ul class="service-points">
+              <li>
+                Designed an end-to-end KYC system that reduced Operations team
+                workload by 93% through automated promoter verification with
+                Spring Boot and third-party API integrations.
+              </li>
+              <li>
+                Led development of a Task Management App with FastAPI for task
+                assignment, geo-fencing check-ins, and attendance tracking,
+                cutting manual coordination effort by 90%.
+              </li>
+              <li>
+                Built a multilingual AI assistant across 7+ regional languages
+                using LangGraph and agentic frameworks, increasing sales revenue
+                by reducing merchant intervention.
+              </li>
+              <li>
+                Optimized POS backend workflows, including charge-slip
+                generation and IMEI/SKU scanning, improving transaction
+                processing and boosting scanner speed by 40%.
+              </li>
+            </ul>
           </div>
 
+          <div class="service-item glass spotlight">
+            <div class="service-head">
+              <div class="company-title">
+                <span class="company-badge">
+                  <img
+                    src="assets/moodys-logo.jpeg"
+                    alt="Moody's Analytics logo"
+                  />
+                </span>
+                <h3>Associate Programmer Analyst Intern</h3>
+              </div>
+              <span class="service-meta"
+                >Moody's Analytics · Jun 2024 – Aug 2024</span
+              >
+            </div>
+            <ul class="service-points">
+              <li>
+                Improved unit test coverage from 24% to 98% using C#, NUnit, and
+                Moq while working within agile methodologies, in close
+                collaboration with the team.
+              </li>
+            </ul>
+          </div>
+
+          <div class="service-item glass spotlight">
+            <div class="service-head">
+              <div class="company-title">
+                <span class="company-badge">
+                  <img
+                    src="assets/agumentik-logo.jpeg"
+                    alt="Agumentik Group of Companies logo"
+                  />
+                </span>
+                <h3>UI/UX Designer Intern</h3>
+              </div>
+              <span class="service-meta"
+                >Agumentik Group of Companies · Jun 2023 – Aug 2023</span
+              >
+            </div>
+            <ul class="service-points">
+              <li>
+                Ran usability testing with 200+ users and partnered with
+                cross-functional teams to design a service-booking app, reducing
+                support inquiries by 50% through optimized wireframes and
+                prototypes.
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- ----------------- Portfolio ----------------- -->
+    <!-- ----------------- Personal Projects ----------------- -->
 
-    <div id="portfolio">
+    <div id="projects">
       <div class="container">
-        <h1 class="sub-title">My Work</h1>
+        <p class="section-marker">03 — Projects</p>
+        <h2 class="sub-title">Personal projects</h2>
         <div class="work-list">
-          
-          <!-- WikiWise -->
-          <div class="work">
-            <img src="images/work-1.png" />
+          <div class="work tilt-card">
+            <img src="assets/work-1.png" />
             <div class="layer">
-              <h3>WikiWise</h3>
+              <h3>Dev Launchpad</h3>
               <p>
-                GenAI-powered platform built using MERN stack to answer user queries with articles and concise explanations—enhancing information access and knowledge sharing.
+                In-browser AI development environment that generates full-stack
+                applications from prompts and runs them live in a WebContainer,
+                using reusable startups to cut setup time and launch previews
+                almost instantly.
               </p>
-              <a href="https://github.com/FayazMohammad1/Wiki-Project">
+              <a
+                href="https://github.com/FayazMohammad1/dev-launchpad"
+                target="_blank"
+              >
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
-    
-          <!-- Virtual Assistant -->
-          <div class="work">
-            <img src="images/work-2.png" />
+
+          <div class="work tilt-card">
+            <img src="assets/work-3.png" />
+            <div class="layer">
+              <h3>Blockchain Crowdfunding Platform</h3>
+              <p>
+                Web3 crowdfunding platform built with Solidity, MetaMask, and
+                React, featuring detailed campaign creation and real-time
+                tracking for transparency and trust.
+              </p>
+              <a
+                href="https://github.com/FayazMohammad1/Blockchain-based-Crowdfunding-Platform"
+                target="_blank"
+              >
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="work tilt-card">
+            <img src="assets/work-2.png" />
             <div class="layer">
               <h3>Virtual Assistant</h3>
               <p>
-                Developed an advanced voice-based AI assistant in Python, similar to Siri or Google Assistant, providing real-time web-integrated responses with high accuracy.
+                Voice-based AI assistant built in Python, integrated with the
+                web to deliver real-time responses with efficiency and accuracy.
               </p>
-              <a href="https://github.com/FayazMohammad1/Virtual-Assistant">
+              <a
+                href="https://github.com/FayazMohammad1/Virtual-Assistant"
+                target="_blank"
+              >
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
-    
-          <!-- Blockchain Crowdfunding -->
-          <div class="work">
-            <img src="images/work-3.png" />
-            <div class="layer">
-              <h3>Blockchain Based Crowdfunding Platform</h3>
-              <p>
-                Developed a Web3-based crowdfunding platform using Solidity and React with real-time tracking and smart contract transparency to ensure trust and accountability.
-              </p>
-              <a href="https://github.com/FayazMohammad1/Blockchain-based-Crowdfunding-Platform">
-                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-              </a>
-            </div>
-          </div>
-    
         </div>
-        <a href="https://github.com/FayazMohammad1" class="btn">See more</a>
+        <a
+          href="https://github.com/FayazMohammad1"
+          target="_blank"
+          class="btn btn-ghost btn-center"
+          >See more on GitHub</a
+        >
       </div>
     </div>
-    
 
     <!-- ---------------- Contact --------------- -->
 
     <div id="contact">
       <div class="container">
+        <p class="section-marker">04 — Contact</p>
         <div class="row">
           <div class="contact-left">
-            <h1 class="sub-title">Contact Me</h1>
+            <h2 class="sub-title">Let's talk</h2>
+            <p class="contact-intro">
+              Open to new opportunities and interesting problems. Reach out
+              directly, or use the form.
+            </p>
             <p>
-              <a href="https://mail.google.com/mail/?view=cm&to=talkwithfayaz@gmail.com" target="_blank">
+              <a
+                href="https://mail.google.com/mail/?view=cm&to=talkwithfayaz@gmail.com"
+                target="_blank"
+              >
                 <i class="fa-solid fa-paper-plane"></i> talkwithfayaz@gmail.com
               </a>
             </p>
             <p>
               <a href="tel:+917286966090">
-                <i class="fa-solid fa-phone"></i> +91-7286966090
+                <i class="fa-solid fa-phone"></i> +91 72869 66090
               </a>
             </p>
             <div class="social-icons">
-              <a href="https://www.linkedin.com/in/mohammad-fayaz-shaik-826903238/"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://github.com/FayazMohammad1"><i class="fa-brands fa-github"></i></a>
-              <a href="https://instagram.com/fayaz_mohammad_1?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D"><i class="fa-brands fa-instagram"></i></a>
+              <a
+                href="https://www.linkedin.com/in/mohammad-fayaz-shaik-826903238/"
+                target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://github.com/FayazMohammad1" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://leetcode.com/u/fayaz_mohammad_1/" target="_blank"
+                ><i class="fa-solid fa-code"></i
+              ></a>
+              <a
+                href="https://instagram.com/fayaz_mohammad_1?utm_source=qr&igshid=ZDc4ODBmNjlmNQ%3D%3D"
+                target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
             </div>
-            <a href="images/Mohammad_Fayaz_Resume.pdf" download class="btn btn2">Download Resume</a>
+            <a
+              href="assets/MohammadFayazShaik_Resume.pdf"
+              download
+              class="btn btn-primary"
+              >Download resume</a
+            >
           </div>
           <div class="contact-right">
-            <form name="submit-to-google-sheet">
-              <input type="text" name="Name" placeholder="Your Name" required />
+            <form name="submit-to-google-sheet" class="glass">
+              <input type="text" name="Name" placeholder="Your name" required />
               <input
                 type="email"
                 name="Email"
-                placeholder="Your Email"
+                placeholder="Your email"
                 required
               />
               <textarea
                 name="Message"
-                rows="6"
-                placeholder="Your Message"
+                rows="5"
+                placeholder="Your message"
               ></textarea>
-              <button type="submit" class="btn btn2">Submit</button>
+              <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-
             <span id="msg"></span>
-
           </div>
         </div>
       </div>
       <div class="copyright">
-        <p>
-          Copyright © Fayaz. 2025 All Rights Reserved.
-        </p>
+        <p>Copyright © Fayaz, 2026. All rights reserved.</p>
       </div>
     </div>
 
@@ -251,46 +458,109 @@
     <script>
       var sidemenu = document.getElementById("sidemenu");
       function openmenu() {
-        sidemenu.style.right = "0";
+        sidemenu.classList.add("open");
+        document.body.classList.add("menu-open");
       }
       function closemenu() {
-        sidemenu.style.right = "-200px";
+        sidemenu.classList.remove("open");
+        document.body.classList.remove("menu-open");
       }
     </script>
 
-<script>
-  const scriptURL =
-    "https://script.google.com/macros/s/AKfycbxWS0Fsub-EaKDSqEyg-l6JzT5kZWeJovDmRY6o7fL7cviI22Jq0lSt3WgJ3I-c518mHw/exec";
-  const form = document.forms["submit-to-google-sheet"];
-  const msg = document.getElementById("msg");
-  const submitBtn = form.querySelector("button[type='submit']");
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    // Disable button and change text
-    submitBtn.disabled = true;
-    submitBtn.innerText = "Submitting...";
-
-    fetch(scriptURL, { method: "POST", body: new FormData(form) })
-      .then((response) => {
-        msg.innerHTML = "Message sent successfully!";
-        setTimeout(() => {
-          msg.innerHTML = "";
-        }, 5000);
-        form.reset();
-
-        // Re-enable button and restore text
-        submitBtn.disabled = false;
-        submitBtn.innerText = "Submit";
-      })
-      .catch((error) => {
-        console.error("Error!", error.message);
-        msg.innerHTML = "Something went wrong. Please try again!";
-        submitBtn.disabled = false;
-        submitBtn.innerText = "Submit";
+    <script>
+      // Theme toggle — dark by default, preference remembered in localStorage.
+      var root = document.documentElement;
+      var toggle = document.getElementById("theme-toggle");
+      toggle.addEventListener("click", function () {
+        var isLight = root.getAttribute("data-theme") === "light";
+        root.setAttribute("data-theme", isLight ? "dark" : "light");
+        localStorage.setItem("theme", isLight ? "dark" : "light");
       });
-  });
-</script>
+    </script>
+
+    <script>
+      // Cursor-following ambient glow (desktop only, respects reduced motion).
+      var glow = document.querySelector(".cursor-glow");
+      var reduceMotion = window.matchMedia(
+        "(prefers-reduced-motion: reduce)",
+      ).matches;
+      var hasFinePointer = window.matchMedia("(pointer: fine)").matches;
+      var raf = null;
+
+      if (glow && hasFinePointer && !reduceMotion) {
+        document.addEventListener("mousemove", function (e) {
+          if (raf) cancelAnimationFrame(raf);
+          raf = requestAnimationFrame(function () {
+            glow.style.transform =
+              "translate(" + e.clientX + "px," + e.clientY + "px)";
+          });
+        });
+      } else if (glow) {
+        glow.style.display = "none";
+      }
+
+      // Per-card spotlight that follows the cursor (service items).
+      document.querySelectorAll(".spotlight").forEach(function (card) {
+        card.addEventListener("mousemove", function (e) {
+          var rect = card.getBoundingClientRect();
+          var x = ((e.clientX - rect.left) / rect.width) * 100;
+          var y = ((e.clientY - rect.top) / rect.height) * 100;
+          card.style.setProperty("--mx", x + "%");
+          card.style.setProperty("--my", y + "%");
+        });
+      });
+
+      // Subtle 3D tilt on hover for project cards and the profile photo.
+      if (hasFinePointer && !reduceMotion) {
+        document.querySelectorAll(".tilt-card").forEach(function (card) {
+          card.addEventListener("mousemove", function (e) {
+            var rect = card.getBoundingClientRect();
+            var px = (e.clientX - rect.left) / rect.width - 0.5;
+            var py = (e.clientY - rect.top) / rect.height - 0.5;
+            card.style.transform =
+              "perspective(700px) rotateY(" +
+              px * 8 +
+              "deg) rotateX(" +
+              py * -8 +
+              "deg)";
+          });
+          card.addEventListener("mouseleave", function () {
+            card.style.transform =
+              "perspective(700px) rotateY(0deg) rotateX(0deg)";
+          });
+        });
+      }
+    </script>
+
+    <script>
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbxWS0Fsub-EaKDSqEyg-l6JzT5kZWeJovDmRY6o7fL7cviI22Jq0lSt3WgJ3I-c518mHw/exec";
+      const form = document.forms["submit-to-google-sheet"];
+      const msg = document.getElementById("msg");
+      const submitBtn = form.querySelector("button[type='submit']");
+
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        submitBtn.disabled = true;
+        submitBtn.innerText = "Submitting...";
+
+        fetch(scriptURL, { method: "POST", body: new FormData(form) })
+          .then((response) => {
+            msg.innerHTML = "Message sent successfully!";
+            setTimeout(() => {
+              msg.innerHTML = "";
+            }, 5000);
+            form.reset();
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit";
+          })
+          .catch((error) => {
+            console.error("Error!", error.message);
+            msg.innerHTML = "Something went wrong. Please try again!";
+            submitBtn.disabled = false;
+            submitBtn.innerText = "Submit";
+          });
+      });
+    </script>
   </body>
 </html>
